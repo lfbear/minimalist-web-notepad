@@ -56,7 +56,8 @@ if (isset($_GET['raw']) || strpos($_SERVER['HTTP_USER_AGENT'], 'curl') === 0 || 
 </head>
 <body>
     <div class="container">
-        <textarea id="content"><?php
+        <div class="tool"><input type="checkbox" id="writeable"><label for="writeable">Writeable</label></div>
+        <textarea id="content" readonly="true"><?php
             if (is_file($path)) {
                 print htmlspecialchars(file_get_contents($path), ENT_QUOTES, 'UTF-8');
             }

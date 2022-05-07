@@ -44,3 +44,17 @@ printable.appendChild(document.createTextNode(content));
 
 textarea.focus();
 uploadContent();
+
+var writeSwitch = document.getElementById("writeable");
+
+function makeWriteable(){
+    if(writeSwitch.checked){
+        textarea.readOnly = false;
+        textarea.style.borderColor = "darkblue";
+    } else {
+        textarea.readOnly = true;
+        textarea.style.borderColor = "#ddd";
+    }
+}
+
+writeSwitch.addEventListener("click", makeWriteable);

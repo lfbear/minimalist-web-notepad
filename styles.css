@@ -27,6 +27,10 @@ body {
 #printable {
     display: none;
 }
+.tool {
+    line-height: 30px;
+    float: right;
+}
 
 @media (prefers-color-scheme: dark) {
     body {

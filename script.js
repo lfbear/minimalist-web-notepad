@@ -45,12 +45,14 @@ printable.appendChild(document.createTextNode(content));
 textarea.focus();
 uploadContent();
 
+// Setup the Write switcher for textarea
+
 var writeSwitch = document.getElementById("writeable");
 
 function makeWriteable(){
-    if(writeSwitch.checked){
+    if(writeSwitch.checked == true){
         textarea.readOnly = false;
-        textarea.style.borderColor = "darkblue";
+        textarea.style.borderColor = "#0066CC";
     } else {
         textarea.readOnly = true;
         textarea.style.borderColor = "#ddd";
@@ -58,3 +60,9 @@ function makeWriteable(){
 }
 
 writeSwitch.addEventListener("click", makeWriteable);
+
+//open write mode if nothing in content
+if (textarea.value.trim().length == 0){
+    writeSwitch.checked = true
+    makeWriteable()
+}
